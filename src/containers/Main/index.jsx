@@ -41,7 +41,7 @@ function Main() {
   return (
     <React.Fragment>
       <div className={`loading-splash${showContent ? " hidden" : ""}`}>
-        <img src={svg} />
+        <img src={svg} alt="Condor splash" />
       </div>
       <div className={`main-widget-container${showContent ? "show" : ""}`}>
         <WidgetsProvider>

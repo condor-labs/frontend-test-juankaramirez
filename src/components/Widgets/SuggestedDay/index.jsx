@@ -35,6 +35,7 @@ function WidgetSuggestedDay() {
             });
           }
         }
+        return null;
       });
     }
   }, [mainHeadquarterForecast]);
