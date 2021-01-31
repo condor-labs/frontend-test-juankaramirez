@@ -1,0 +1,21 @@
+@import "./variables.scss";
+
+.App {
+  max-width: 1024px;
+  padding: 3em 3.5em;
+  margin: 0 auto;
+  font-family: "Lato", sans-serif;
+  background-color: $lightGray;
+}
+
+@media (max-width: 767.98px) {
+  .App {
+    padding: 3em 1.5em;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h2 {
+    font-size: 1.2em;
+  }
+}

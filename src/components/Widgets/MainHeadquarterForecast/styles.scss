@@ -1,0 +1,218 @@
+@import "../../../assets/styles/variables.scss";
+
+#widget-carousel {
+  margin-top: 4em;
+  padding: 1.5em 3em 2em;
+  border-radius: 1.5em;
+  max-width: 550px;
+  background-color: $white;
+  display: flex;
+  flex-wrap: wrap;
+
+  .widget-carousel-title {
+    color: $lightPurple;
+    font-weight: 700;
+    flex: 0 0 80%;
+    align-self: center;
+  }
+
+  .widget-carousel-controls {
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+
+    .widget-carousel-controls-container {
+      display: flex;
+
+      span {
+        border: 1px solid $purple;
+        border-radius: 50%;
+        width: 2.2em;
+        height: 2.2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 300ms ease;
+
+        &:last-of-type {
+          margin-left: 1rem;
+        }
+
+        i {
+          font-size: 0.8em;
+          color: $purple;
+          transition: all 300ms ease;
+        }
+
+        &:hover {
+          background-color: $purple;
+          cursor: pointer;
+          & i {
+            color: $white;
+          }
+        }
+
+        &.disabled {
+          opacity: 0.3;
+          cursor: default;
+          &:hover {
+            background-color: $white;
+            & i {
+              color: $purple;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .widget-carousel-item-container {
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-start;
+    flex: 0 0 100%;
+    overflow: hidden;
+
+    .widget-carousel-item {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      flex: 0 0 33.33%;
+
+      -webkit-animation: show-item 1.5s 1; /* Safari 4+ */
+      -moz-animation: show-item 1.5s 1; /* Fx 5+ */
+      -o-animation: show-item 1.5s 1; /* Opera 12+ */
+      animation: show-item 1.5s 1; /* IE 10+, Fx 29+ */
+      &.hidden {
+        display: none;
+      }
+
+      &:not(.hidden) {
+        &:nth-of-type(2),
+        &:nth-last-of-type(2) {
+          border-color: $lightGray;
+          border-style: solid;
+          border-width: 0 1px;
+        }
+      }
+
+      .widget-day {
+        color: $darkGray;
+        font-size: 1em;
+        font-weight: 700;
+      }
+
+      .widget-temperature {
+        margin-top: 0.2em;
+        color: $gray;
+        font-size: 1.8em;
+        font-weight: 300;
+      }
+
+      .widget-carousel-item-humidity-wind {
+        display: flex;
+        margin-top: 1rem;
+
+        span {
+          display: flex;
+          align-items: center;
+          margin: 0 0.8em;
+          font-size: 0.8em;
+          color: $gray;
+          font-weight: 400;
+
+          i {
+            margin: 0 0.5em;
+            font-size: 0.7em;
+            color: $pink;
+          }
+        }
+
+        span {
+          &:last-of-type {
+            i {
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    padding: 2em 2em;
+    .widget-carousel-item-container {
+      .widget-carousel-item {
+        .widget-carousel-item-humidity-wind {
+          span {
+            font-size: 0.75em;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    padding: 2em 2em;
+
+    .widget-carousel-title {
+      flex: 0 0 100%;
+      text-align: center;
+    }
+
+    .widget-carousel-controls {
+      flex: 0 0 100%;
+      margin-top: 2em;
+      justify-content: center;
+    }
+    .widget-carousel-item-container {
+      margin-top: 0;
+      flex-flow: column;
+      .widget-carousel-item {
+        padding: 1em 0;
+        &:not(.hidden) {
+          &:nth-of-type(2),
+          &:nth-last-of-type(2) {
+            border-color: $lightGray;
+            border-style: solid;
+            border-width: 1px 0;
+          }
+        }
+      }
+    }
+  }
+
+  @-webkit-keyframes show-item {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes show-item {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes show-item {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes show-item {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

@@ -181,35 +181,35 @@ describe("Weather App", () => {
     expect(dataFound).toBeTruthy();
   });
 
-  it("Widget-headquarter has been defined and equal to MEDELLÍN - CO on Widget #4", async () => {
+  it("Widget-headquarter has been defined and equal to CARTAGENA - CO on Widget #4", async () => {
     const dataFound = await weatherApp.validateHeadquarterOnSuggestsWidget({
       page,
     });
-    expect(dataFound).toContain("MEDELLÍN - CO");
+    expect(dataFound).toContain("CARTAGENA - CO");
   });
 
-  it("Widget-temperature has been defined and equal to 25° C on Widget #4", async () => {
+  it("Widget-temperature has been defined and equal to 27° C on Widget #4", async () => {
     const dataFound = await weatherApp.validateTemperatureOnSuggestsWidget({
       page,
     });
-    expect(dataFound).toContain("25° C");
+    expect(dataFound).toContain("27° C");
   });
 
-  it("Widget-humidity has been defined and equal to 5.1 m/s on Widget #4", async () => {
+  it("Widget-humidity has been defined and equal to 80 % on Widget #4", async () => {
     const dataFound = await weatherApp.validateHumidityOnSuggestsWidget({
       page,
     });
-    expect(dataFound).toContain("40 %");
+    expect(dataFound).toContain("80 %");
   });
 
-  it("Widget-wind has been defined and equal to 5.1 m/s on Widget #4", async () => {
+  it("Widget-wind has been defined and equal to 2 m/s on Widget #4", async () => {
     const dataFound = await weatherApp.validateWindOnSuggestsWidget({ page });
-    expect(dataFound).toContain("5.1 m/s");
+    expect(dataFound).toContain("2 m/s");
   });
 
-  it("Widget-day has been defined and equal to WEDNESDAY on Widget #4", async () => {
+  it("Widget-day has been defined and equal to TUESDAY on Widget #4", async () => {
     const dataFound = await weatherApp.validateDayOnSuggestsWidget({ page });
-    expect(dataFound).toContain("WEDNESDAY");
+    expect(dataFound).toContain("TUESDAY");
   });
 
   /* 
